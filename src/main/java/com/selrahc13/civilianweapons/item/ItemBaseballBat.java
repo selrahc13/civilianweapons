@@ -67,7 +67,6 @@ public class ItemBaseballBat extends ItemSword implements IOffhandDual, ISword{
         return EnumRarity.epic;
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
 	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool){
     	dataList.add("Knock one out of the park");
