@@ -12,9 +12,14 @@ import org.apache.logging.log4j.Logger;
 import com.selrahc13.civilianweapons.common.CommonProxy;
 import com.selrahc13.civilianweapons.item.ItemAluminumBat;
 import com.selrahc13.civilianweapons.item.ItemBaseballBat;
+import com.selrahc13.civilianweapons.item.ItemBatteries;
+import com.selrahc13.civilianweapons.item.ItemBeans;
+import com.selrahc13.civilianweapons.item.ItemEmptyCan;
+import com.selrahc13.civilianweapons.item.ItemFirstAid;
 import com.selrahc13.civilianweapons.item.ItemHammer;
 import com.selrahc13.civilianweapons.item.ItemNailBat;
 import com.selrahc13.civilianweapons.item.ItemNails;
+import com.selrahc13.civilianweapons.item.ItemSoup;
 import com.selrahc13.civilianweapons.item.ItemTape;
 import com.selrahc13.civilianweapons.item.ItemTapedBat;
 import com.selrahc13.civilianweapons.util.RegisterHelper;
@@ -46,13 +51,18 @@ public class CivilianWeapons {
 	public static Logger logger;
 
 	// Items
-	public static Item baseballBat;
-	public static Item nailBat;
-	public static Item aluminumBat;
-	public static Item tapedBat;
-	public static Item tape;
-	public static Item nails;
-	public static Item hammer;
+	public static Item itemBaseballBat;
+	public static Item itemNailBat;
+	public static Item itemAluminumBat;
+	public static Item itemTapedBat;
+	public static Item itemTape;
+	public static Item itemNails;
+	public static Item itemHammer;
+	public static Item itemEmptyCan;
+	public static Item itemSoup;
+	public static Item itemBeans;
+	public static Item itemBatteries;
+	public static Item itemFirstAid;
 	
 	// Materials
 	public static ToolMaterial matWoodBat;
@@ -64,7 +74,7 @@ public class CivilianWeapons {
 	public static CreativeTabs tabCreative = new CreativeTabs(Reference.MODID + "_tabCivilianWeapons") {
 		@Override
 		public Item getTabIconItem() {
-			return baseballBat;
+			return itemTapedBat;
 		}
 	};
 
@@ -82,41 +92,52 @@ public class CivilianWeapons {
 		matTapedBat = EnumHelper.addToolMaterial("matTapedBat", 0, 150, 15.f, 5.5F, 0);
 		
 		// Register new items
-		baseballBat = new ItemBaseballBat(matWoodBat);
-		nailBat = new ItemNailBat(matNailBat);
-		aluminumBat = new ItemAluminumBat(matAluminumBat);
-		tapedBat = new ItemTapedBat(matTapedBat);
-		tape = new ItemTape();
-		nails = new ItemNails();
-		hammer = new ItemHammer();
+		itemBaseballBat = new ItemBaseballBat(matWoodBat);
+		itemNailBat = new ItemNailBat(matNailBat);
+		itemAluminumBat = new ItemAluminumBat(matAluminumBat);
+		itemTapedBat = new ItemTapedBat(matTapedBat);
+		itemTape = new ItemTape();
+		itemNails = new ItemNails();
+		itemHammer = new ItemHammer();
+		itemBatteries = new ItemBatteries();
+		itemSoup = new ItemSoup();
+		itemBeans = new ItemBeans();
+		itemEmptyCan = new ItemEmptyCan();
+		itemFirstAid = new ItemFirstAid();
 		
 		logger.info("Registering items");
-		RegisterHelper.RegisterItem(baseballBat);
-		RegisterHelper.RegisterItem(tapedBat);
-		RegisterHelper.RegisterItem(nailBat);
-		RegisterHelper.RegisterItem(aluminumBat);
-		RegisterHelper.RegisterItem(tape);
-		RegisterHelper.RegisterItem(nails);
-		RegisterHelper.RegisterItem(hammer);
+		RegisterHelper.RegisterItem(itemBaseballBat);
+		RegisterHelper.RegisterItem(itemTapedBat);
+		RegisterHelper.RegisterItem(itemNailBat);
+		RegisterHelper.RegisterItem(itemAluminumBat);
+		RegisterHelper.RegisterItem(itemTape);
+		RegisterHelper.RegisterItem(itemNails);
+		RegisterHelper.RegisterItem(itemHammer);
+		RegisterHelper.RegisterItem(itemBatteries);
+		RegisterHelper.RegisterItem(itemSoup);
+		RegisterHelper.RegisterItem(itemBeans);
+		RegisterHelper.RegisterItem(itemEmptyCan);
+		RegisterHelper.RegisterItem(itemFirstAid);
+		
 		
 		// Nailbat recipes
-		GameRegistry.addShapelessRecipe(new ItemStack(nailBat), new Object[] {
-			new ItemStack(baseballBat, 1, OreDictionary.WILDCARD_VALUE), 
-			new ItemStack(tape, 1, OreDictionary.WILDCARD_VALUE), 
-			nails, 
-			new ItemStack(hammer, 1, OreDictionary.WILDCARD_VALUE)
+		GameRegistry.addShapelessRecipe(new ItemStack(itemNailBat), new Object[] {
+			new ItemStack(itemTapedBat, 1, OreDictionary.WILDCARD_VALUE), 
+			new ItemStack(itemTape, 1, OreDictionary.WILDCARD_VALUE), 
+			itemNails, 
+			new ItemStack(itemHammer, 1, OreDictionary.WILDCARD_VALUE)
 		});
 		
-		GameRegistry.addShapelessRecipe(new ItemStack(nailBat), new Object[] {
-			new ItemStack(tapedBat, 1, OreDictionary.WILDCARD_VALUE), 
-			nails, 
-			new ItemStack(hammer, 1, OreDictionary.WILDCARD_VALUE)
+		GameRegistry.addShapelessRecipe(new ItemStack(itemNailBat), new Object[] {
+			new ItemStack(itemTapedBat, 1, OreDictionary.WILDCARD_VALUE), 
+			itemNails, 
+			new ItemStack(itemHammer, 1, OreDictionary.WILDCARD_VALUE)
 		});
 		
 		// Taped bat recipe
-		GameRegistry.addShapelessRecipe(new ItemStack(tapedBat), new Object[] {
-			new ItemStack(baseballBat, 1, OreDictionary.WILDCARD_VALUE), 
-			new ItemStack(tape, 1, OreDictionary.WILDCARD_VALUE)
+		GameRegistry.addShapelessRecipe(new ItemStack(itemTapedBat), new Object[] {
+			new ItemStack(itemTapedBat, 1, OreDictionary.WILDCARD_VALUE), 
+			new ItemStack(itemTape, 1, OreDictionary.WILDCARD_VALUE)
 		});
 	}
 

@@ -22,13 +22,13 @@ public class CraftingHandler {
 				if (item != null) {
 					ItemStack k = null;
 					// Damageable tools used for crafting
-					if (item.getItem() == CivilianWeapons.hammer) {
-						k = new ItemStack(CivilianWeapons.hammer,2,(item.getItemDamage() + 1));
-					} else if (item.getItem() == CivilianWeapons.tape) {
-						k = new ItemStack(CivilianWeapons.tape,2,(item.getItemDamage() + 1));
+					if (item.getItem() == CivilianWeapons.itemHammer) {
+						k = new ItemStack(CivilianWeapons.itemHammer,2,(item.getItemDamage() + 1));
+					} else if (item.getItem() == CivilianWeapons.itemTape) {
+						k = new ItemStack(CivilianWeapons.itemTape,2,(item.getItemDamage() + 1));
 						
 					// Keep original damage amounts on crafted weapons
-					} else if (item.getItem() == CivilianWeapons.baseballBat || item.getItem() == CivilianWeapons.tapedBat) {
+					} else if (item.getItem() == CivilianWeapons.itemBaseballBat || item.getItem() == CivilianWeapons.itemTapedBat) {
 						event.crafting.setItemDamage(item.getItemDamage());
 						continue;
 					}

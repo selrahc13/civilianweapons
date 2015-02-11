@@ -19,10 +19,10 @@ public class ClientProxy extends CommonProxy {
 	public void registerRenderers() {
 		// This is for rendering entities etc
 		CivilianWeapons.logger.info("Registering renderers");
-		MinecraftForgeClient.registerItemRenderer(CivilianWeapons.baseballBat, new ItemRenderBaseballBat(0.25f));
-		MinecraftForgeClient.registerItemRenderer(CivilianWeapons.tapedBat, new ItemRenderTapedBat(0.25f));
-		MinecraftForgeClient.registerItemRenderer(CivilianWeapons.aluminumBat, new ItemRenderAluminumBat(0.25f));
-		MinecraftForgeClient.registerItemRenderer(CivilianWeapons.nailBat, new ItemRenderNailBat(0.25f));
+		MinecraftForgeClient.registerItemRenderer(CivilianWeapons.itemBaseballBat, new ItemRenderBaseballBat(0.25f));
+		MinecraftForgeClient.registerItemRenderer(CivilianWeapons.itemTapedBat, new ItemRenderTapedBat(0.25f));
+		MinecraftForgeClient.registerItemRenderer(CivilianWeapons.itemAluminumBat, new ItemRenderAluminumBat(0.25f));
+		MinecraftForgeClient.registerItemRenderer(CivilianWeapons.itemNailBat, new ItemRenderNailBat(0.25f));
 	}
 	
 }
