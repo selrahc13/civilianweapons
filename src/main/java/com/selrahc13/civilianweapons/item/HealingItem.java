@@ -52,6 +52,7 @@ public class HealingItem extends GenericItem {
     /**
      * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
      */
+    // TODO: Add potion effects processing
     public ItemStack onItemRightClick(ItemStack theItem, World theWorld, EntityPlayer thePlayer)
     {
         thePlayer.setItemInUse(theItem, this.getMaxItemUseDuration(theItem));
